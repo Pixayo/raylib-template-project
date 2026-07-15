@@ -1,9 +1,8 @@
-# raylib CMake Project
+# pixayo - raylib CMake Project
 
 This provides a base project template which builds with [CMake](https://cmake.org).
 
-> [!WARNING]
-> This CMake template wasn't made by me, I'm trying to make my own template project for every Raylib game I ever try to make.
+#### Source: https://github.com/raysan5/raylib/tree/master/projects/CMake
 
 ## Usage
 
@@ -18,6 +17,6 @@ cmake -B build
 cmake --build build
 ```
 
-### Things TODO
+## Things TODO
 
 - Cross-compile: Linux -> Windows
