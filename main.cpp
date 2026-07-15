@@ -1,3 +1,7 @@
+/* Original copyright disclaimer
+ * This is a modified version of a template CMake project shipped with the raylib library
+*/
+
 /*******************************************************************************************
 *
 *   raylib [core] example - Basic window (adapted for HTML5 platform)
@@ -12,66 +16,43 @@
 *   Copyright (c) 2015 Ramon Santamaria (@raysan5)
 *
 ********************************************************************************************/
+// This WAS prepared to compile for Web platform, I just don't use it.
 
 #include "raylib.h"
 
-#if defined(PLATFORM_WEB)
-    #include <emscripten/emscripten.h>
-#endif
-
-//----------------------------------------------------------------------------------
-// Global Variables Definition
-//----------------------------------------------------------------------------------
 int screenWidth = 800;
 int screenHeight = 450;
 
-//----------------------------------------------------------------------------------
-// Module Functions Declaration
-//----------------------------------------------------------------------------------
-void UpdateDrawFrame(void);     // Update and Draw one frame
+void UpdateDrawFrame(void);
 
-//----------------------------------------------------------------------------------
-// Program main entry point
-//----------------------------------------------------------------------------------
+
 int main()
 {
-    // Initialization
-    //--------------------------------------------------------------------------------------
     InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
 
-#if defined(PLATFORM_WEB)
-    emscripten_set_main_loop(UpdateDrawFrame, 0, 1);
-#else
-    SetTargetFPS(60);   // Set our game to run at 60 frames-per-second
-    //--------------------------------------------------------------------------------------
+    SetTargetFPS(60);
 
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
     {
         UpdateDrawFrame();
     }
-#endif
 
     // De-Initialization
-    //--------------------------------------------------------------------------------------
     CloseWindow();        // Close window and OpenGL context
-    //--------------------------------------------------------------------------------------
 
     return 0;
 }
 
-//----------------------------------------------------------------------------------
-// Module Functions Definition
-//----------------------------------------------------------------------------------
+// Update and draw one frame
 void UpdateDrawFrame(void)
 {
-    // Update
-    //----------------------------------------------------------------------------------
     // TODO: Update your variables here
-    //----------------------------------------------------------------------------------
+    
+    // Update
+    // [...]
 
     // Draw
-    //----------------------------------------------------------------------------------
     BeginDrawing();
 
         ClearBackground(RAYWHITE);
@@ -79,5 +60,4 @@ void UpdateDrawFrame(void)
         DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
 
     EndDrawing();
-    //----------------------------------------------------------------------------------
 }
